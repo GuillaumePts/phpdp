@@ -4,4 +4,45 @@
 
 body{
     background-color: #333;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+}
+
+header{
+    width: 100%;
+    grid-area: 'header';
+    background-color: #9c3434;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+main{
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 'main';
+    background-color: rgb(43, 104, 43);
+    
+
+}
+
+footer{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    grid-area: 'footer';
+    background-color: rgb(58, 58, 196);
 }

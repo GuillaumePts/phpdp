@@ -9,4 +9,15 @@
 </head>
 <body>
     
-<h1>dp php</h1>
+    <header>
+        <h1>logo</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php?page=accueil">Accueil</a></li>
+                <li><a href="index.php?page=articles">Articles</a></li>
+                <li><a href="index.php?page=contact">Contact</a></li>
+                <li><a href="index.php?page=inscription">Inscription</a></li>
+                <li><a href="index.php?page=connection">Connection</a></li>
+            </ul>
+        </nav>
+    </header>
