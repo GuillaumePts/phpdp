@@ -29,12 +29,27 @@ main{
     
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     grid-area: 'main';
     background-color: rgb(43, 104, 43);
     
 
+}
+
+form div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+form{
+    gap: 30px;
 }
 
 footer{

@@ -17,7 +17,19 @@
                 <li><a href="index.php?page=articles">Articles</a></li>
                 <li><a href="index.php?page=contact">Contact</a></li>
                 <li><a href="index.php?page=inscription">Inscription</a></li>
-                <li><a href="index.php?page=connection">Connection</a></li>
+               
             </ul>
         </nav>
+        <div class="login">
+                
+                <?php
+                if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+                    echo '<li><a href="index.php?page=deconnexion">Déconnexion</a></li>';
+                    echo '<li><a href="index.php?page=compte">Mon compte</a></li>'; 
+                } else {
+                    echo '<li><a href="index.php?page=connexion">Connexion</a></li>';
+                                    
+                }
+                ?>
+            </div>
     </header>
