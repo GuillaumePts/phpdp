@@ -63,6 +63,8 @@ if (isset($_POST['frmLogin'])) {
 
             $_SESSION['login'] = true;
             d($_SESSION);
+
+            verifierAdmin();
            echo "<script>window.location.replace('http://192.168.1.13:9999/index.php?page=accueil')</script>";
            
         } else {

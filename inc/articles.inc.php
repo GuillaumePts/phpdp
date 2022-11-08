@@ -16,22 +16,42 @@ $sql = "SELECT * FROM categories ";
         
 
         foreach($res as $re){
-            $url = "index.php?page=articles&amp;categories=".$re['nom'];
+            $url = "index.php?page=articles&amp;categories=".$re['nom']."&amp;id=".$re['id_categories'];
+
+            
             ?>
             <a href="<?= $url ;?>"><?= $re['nom'] ;?></a>
-               
+
+            
             <?php
 
-$sql = "SELECT * FROM articles WHERE categories_id_categories =".$re['id_categories'];
-$query = $pdo->prepare($sql);
-$query->execute();
-$arts=$query->fetchAll();
+        }
 
-foreach($arts as $art){
-    ?>
 
- <p><?= $art['nom'] ;?></p>
+        if($_GET['id']){
+           
+            $sql = "SELECT * FROM articles WHERE categories_id_categories =".$_GET['id'];
+            $query = $pdo->prepare($sql);
+            $query->execute();
+            $arts=$query->fetchAll();
 
-    <?php
-}
-        }   
+            if(!empty($arts)){
+
+                foreach($arts as $art){
+
+                    ?>
+                
+                    <div><?= $art['nom'];?></div>
+                    <img src="<?=$art['image'];?>" width="60px" alt="image du produit">
+    
+                    <?php
+
+                }
+              
+            }else{
+                echo 'existe pas';
+            }
+
+        }
+
+

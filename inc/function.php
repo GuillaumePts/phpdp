@@ -8,14 +8,23 @@ function autoInclude(string $file): void {
     // Récupération de tous les fichiers du répertoire 'includes' qui ont la double extension .inc.php
     $includedFiles = glob("./inc/*.inc.php");
     // Concaténation du nom de fichier avec le chemin et l'extension
-    $file = "./inc/" . $file . ".inc.php";
+    $files = "./inc/" . $file . ".inc.php";
 
+    // On evite de rentrer dans le back via l'url si on est pas admin
+    if(verifierAdmin() === false && strpos( $file, 'back') === 0)
+    {
+        echo 'cette page existe pas petit malin';
+    }else{
+    
     // Si le nombre de fichiers dans le tableau est > 0 et que la chaîne de caractères $files est dans le tableau
-    if (count($includedFiles) !== 0 && in_array($file, $includedFiles)) {
-        require_once $file;
+    if (count($includedFiles) !== 0 && in_array($files, $includedFiles)) {
+        require_once $files;
+
+
     } else {
         require_once './inc/accueil.inc.php';
     }
+}
 };
 
 function d($var){
@@ -101,7 +110,7 @@ function verifierLogin($email, $motdepasse) {
 
 // Verifie si c'est un admin qui se connecte 
 function verifierAdmin(): bool {
-    if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['roles'] === 'admin') 
+    if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['role'] === 'admin') 
         return true;
     else
         return false;
