@@ -15,12 +15,13 @@
             <ul>
                 <li><a href="index.php?page=back_accueil">Accueil</a></li>
                 <li><a href="index.php?page=back_commandes">Commandes</a></li>
+                <li><a href="index.php?page=back_categories">Categories</a></li>
                 <li><a href="index.php?page=back_produits">Produits</a></li>
                 <li><a href="index.php?page=back_users">Utilisateurs</a></li>
                
             </ul>
         </nav>
-        <div class="login">
+        <div class="login" >
                 
                 <?php
                 if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
