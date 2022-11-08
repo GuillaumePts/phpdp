@@ -1,6 +1,10 @@
-<h2>articles</h2>
+<div id="lescategories">
 
-<?php
+
+
+
+
+    <?php
 
 require 'pdo.php';
 
@@ -16,42 +20,74 @@ $sql = "SELECT * FROM categories ";
         
 
         foreach($res as $re){
-            $url = "index.php?page=articles&amp;categories=".$re['nom']."&amp;id=".$re['id_categories'];
+            
 
             
             ?>
-            <a href="<?= $url ;?>"><?= $re['nom'] ;?></a>
+
+    <div class="categorie">
+        
+
+        <?php
+            echo  '<p class=lacategorie>'.$re['nom'].'</p>' ;
+            echo '<div class=lescards>';
+
 
             
-            <?php
 
-        }
-
-
-        if($_GET['id']){
            
-            $sql = "SELECT * FROM articles WHERE categories_id_categories =".$_GET['id'];
-            $query = $pdo->prepare($sql);
-            $query->execute();
-            $arts=$query->fetchAll();
+    $sql = "SELECT * FROM articles WHERE categories_id_categories =".$re['id_categories'];
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $arts=$query->fetchAll();
 
-            if(!empty($arts)){
+    if(!empty($arts)){
 
-                foreach($arts as $art){
+        foreach($arts as $art){
 
-                    ?>
-                
-                    <div><?= $art['nom'];?></div>
-                    <img src="<?=$art['image'];?>" width="60px" alt="image du produit">
-    
-                    <?php
+            ?>
 
-                }
-              
-            }else{
-                echo 'existe pas';
-            }
+        <div class="card">
+            <div class="plus"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                    <path fill-rule="evenodd"
+                        d="M7,13 C3.6862915,13 1,10.3137085 1,7 C1,3.6862915 3.6862915,1 7,1 C10.3137085,1 13,3.6862915 13,7 C13,10.3137085 10.3137085,13 7,13 Z M8,8 L10,8 C10.5522847,8 11,7.55228475 11,7 C11,6.44771525 10.5522847,6 10,6 L8,6 L8,4 C8,3.44771525 7.55228475,3 7,3 C6.44771525,3 6,3.44771525 6,4 L6,6 L4,6 C3.44771525,6 3,6.44771525 3,7 C3,7.55228475 3.44771525,8 4,8 L6,8 L6,10 C6,10.5522847 6.44771525,11 7,11 C7.55228475,11 8,10.5522847 8,10 L8,8 Z" />
+                </svg></div>
+            <img src="<?=$art['image'];?>" width="160px" alt="image du produit">
+
+
+            <div class="info">
+                <p class="nom"><?= $art['nom'];?></p>
+                <p class="prix"><?= $art['prix'];?>€</p>
+                <p class="description"><?= $art['description'];?></p>
+            </div>
+        </div>
+        <?php
 
         }
 
+        echo '</div>'
+      
+ 
 
+
+
+            ?>
+
+
+    </div>
+    
+
+
+
+
+    <?php
+
+        }
+
+    }
+      
+
+
+?>
+
+</div>

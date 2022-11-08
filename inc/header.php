@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    
     <link rel="stylesheet" href="../assets/style.css">
     <title>DP PHP</title>
 </head>
@@ -18,7 +20,7 @@
             <img src="../assets/img/logo.webp" alt="logo de l'entreprise" width="70px">
         </div>
 
-        <div class="menu">
+        <div id="menuburger">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 250.579 250.579" style="enable-background:new 0 0 250.579 250.579;"
                 xml:space="preserve">
@@ -70,7 +72,7 @@
         <nav id="nav" >
             <ul>
                 <li><a href="index.php?page=accueil">Accueil</a></li>
-                <li><a href="index.php?page=articles&categories=burger&id=1">Articles</a></li>
+                <li><a href="index.php?page=articles&categories">Commander</a></li>
                 <li><a href="index.php?page=contact">Contact</a></li>
                 <li><a href="index.php?page=inscription">Inscription</a></li>
 
@@ -92,9 +94,9 @@
 
         </div>
 
-        <div id="panier">
+        <a id="panier" href="index.php?page=panier">
         <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M397.78,316H192.65A15,15,0,0,1,178,304.33L143.46,153.85a15,15,0,0,1,14.62-18.36H432.35A15,15,0,0,1,447,153.85L412.4,304.33A15,15,0,0,1,397.78,316ZM204.59,286H385.84l27.67-120.48H176.91Z"/><path d="M222,450a57.48,57.48,0,1,1,57.48-57.48A57.54,57.54,0,0,1,222,450Zm0-84.95a27.48,27.48,0,1,0,27.48,27.47A27.5,27.5,0,0,0,222,365.05Z"/><path d="M368.42,450a57.48,57.48,0,1,1,57.48-57.48A57.54,57.54,0,0,1,368.42,450Zm0-84.95a27.48,27.48,0,1,0,27.48,27.47A27.5,27.5,0,0,0,368.42,365.05Z"/><path d="M158.08,165.49a15,15,0,0,1-14.23-10.26L118.14,78H70.7a15,15,0,1,1,0-30H129a15,15,0,0,1,14.23,10.26l29.13,87.49a15,15,0,0,1-14.23,19.74Z"/></g></svg>
-        </div>
+            </a>
 
        
     </header>

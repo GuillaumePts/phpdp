@@ -7,8 +7,7 @@ require './inc/function.php';
 
 
 
-//  $_SESSION['login'] = true;
-//  $_SESSION['test'] = 'problème résolu';
+
 
 
  

@@ -1,3 +1,6 @@
-<h2>accueil</h2>
+
+
+    <img  id="car" src="" alt="image de burger">
+
 
 <?php

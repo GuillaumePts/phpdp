@@ -1,1 +1,1 @@
-<h2>panier</h2>
+<h2>votre panier est vide</h2>
