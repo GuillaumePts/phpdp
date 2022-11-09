@@ -373,6 +373,58 @@ tbody{
 }
 
 
+#user{
+    
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+#editordelete{
+    
+    display: flex;
+    gap: 50px;
+    
+}
+
+#editordelete a{
+    padding: 10px 5px ;
+    background: var(--neoBackg-);
+    box-shadow: var(--neoBoxs-);
+    border-radius: 40px;
+    font-size: 0.8rem;
+}
+
+#alert{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 60%;
+    max-width: 500px;
+    margin-bottom: 100px;
+    background: var(--neoBackg-);
+    box-shadow: var(--neoBoxs-);
+    border-radius: 31px;
+    padding: 10px;
+}
+
+
+
+#alert div a{
+    width: 70px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+
 
 
 /* partie responsive */

@@ -5,18 +5,18 @@
 
 <table>
 
-<tbody>
-  <tr class="baseTr">
-    <td class="baseTab tdid">ID</td>
-    <td class="baseTab">NOM</td>
-    <td class="baseTab">PNOM</td>
-    <td class="baseTab">MAIL</td>
-    <td class="baseTab">BAN</td>
-    <td class="baseTab">ROLE</td>
-    <td class="baseTab">TEL</td>
-  </tr>
+    <tbody>
+        <tr class="baseTr">
+            <td class="baseTab tdid">ID</td>
+            <td class="baseTab">NOM</td>
+            <td class="baseTab">PNOM</td>
+            <td class="baseTab">MAIL</td>
+            <td class="baseTab">BAN</td>
+            <td class="baseTab">ROLE</td>
+            <td class="baseTab">TEL</td>
+        </tr>
 
-  <?php
+        <?php
 
 require 'pdo.php';
 
@@ -32,26 +32,32 @@ require 'pdo.php';
         }else{
             foreach($res as $re){
 
-                $url = "index.php?page=back_selectuser&amp;id=".$re['id_users'];
-                ?>
+                if($re['role'] !== 'admin'){
 
-<tr class="tr">
-    <td class="td"><a href=<?=$url;?>><?=$re['id_users']; ?></a></td>
-    <td class="td"><?=$re['nom']; ?></td>
-    <td class="td"><?=$re['prenom']; ?></td>
-    <td class="td"><?=$re['email']; ?></td>
-    <td class="td"><?=$re['ban']; ?></td>
-    <td class="td"><?=$re['role']; ?></td>
-    <td class="td"><?=$re['tel']; ?></td>
-  </tr>
+                    $url = "index.php?page=back_selectuser&amp;id=".$re['id_users'];
+                    ?>
 
-                <?php
+        <tr class="tr">
+            <td class="td"><a href=<?=$url;?>><?=$re['id_users']; ?></a></td>
+            <td class="td"><?=$re['nom']; ?></td>
+            <td class="td"><?=$re['prenom']; ?></td>
+            <td class="td"><?=$re['email']; ?></td>
+            <td class="td"><?=$re['ban']; ?></td>
+            <td class="td"><?=$re['role']; ?></td>
+            <td class="td"><?=$re['tel']; ?></td>
+        </tr>
+
+      
+
+
+
+        <?php
             }
         }
 
+    }
 
         ?>
 
-</tbody>
+    </tbody>
 </table>
-
