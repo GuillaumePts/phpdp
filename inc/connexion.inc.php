@@ -65,7 +65,7 @@ if (isset($_POST['frmLogin'])) {
             d($_SESSION);
 
             verifierAdmin();
-           echo "<script>window.location.replace('http://192.168.1.13:9999/index.php?page=accueil')</script>";
+           echo "<script>window.location.replace('http://192.168.1.13:9999/index.php?page=back_accueil')</script>";
            
         } else {
             echo "Erreur dans votre login/password";

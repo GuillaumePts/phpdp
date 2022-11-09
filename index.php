@@ -19,14 +19,12 @@ if(verifierAdmin()){
 }
 
 
-
-
-
-
-
-
-
-
-    
     require('./inc/main.php');
-    require ('./inc/footer.php');
+    
+
+
+    if(verifierAdmin()){
+        require ('./backend/footerback.php');
+    }else{
+        require ('./inc/footer.php');
+    }

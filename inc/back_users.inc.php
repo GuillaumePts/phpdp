@@ -1,6 +1,22 @@
-<h2>Back_users</h2>
+<h2>Gestion des Utilisateurs</h2>
 
-<?php
+<p style="margin : 0 20px">Pour modifier un utilisateur veuillez cliquer sur son ID</p>
+
+
+<table>
+
+<tbody>
+  <tr class="baseTr">
+    <td class="baseTab tdid">ID</td>
+    <td class="baseTab">NOM</td>
+    <td class="baseTab">PNOM</td>
+    <td class="baseTab">MAIL</td>
+    <td class="baseTab">BAN</td>
+    <td class="baseTab">ROLE</td>
+    <td class="baseTab">TEL</td>
+  </tr>
+
+  <?php
 
 require 'pdo.php';
 
@@ -15,6 +31,27 @@ require 'pdo.php';
             echo 'vous n\'avez aucuns articles';
         }else{
             foreach($res as $re){
-                d($re);
+
+                $url = "index.php?page=back_selectuser&amp;id=".$re['id_users'];
+                ?>
+
+<tr class="tr">
+    <td class="td"><a href=<?=$url;?>><?=$re['id_users']; ?></a></td>
+    <td class="td"><?=$re['nom']; ?></td>
+    <td class="td"><?=$re['prenom']; ?></td>
+    <td class="td"><?=$re['email']; ?></td>
+    <td class="td"><?=$re['ban']; ?></td>
+    <td class="td"><?=$re['role']; ?></td>
+    <td class="td"><?=$re['tel']; ?></td>
+  </tr>
+
+                <?php
             }
         }
+
+
+        ?>
+
+</tbody>
+</table>
+
